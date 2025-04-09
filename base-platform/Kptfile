@@ -1,0 +1,22 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /base-platform
+  name: base-platform
+  annotations:
+    config.kubernetes.io/local-config: "true"
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|base-platform'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/oneJang/blueprints.git
+    directory: base-platform
+    ref: main
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/oneJang/blueprints.git
+    directory: base-platform
+    ref: main
+    commit: ab12a51ee88de46e528cf84d02dbc6eed026dc4e
+info:
+  description: sample description
